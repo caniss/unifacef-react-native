@@ -12,10 +12,12 @@ interface Props {
 @observer
 export default class Home extends Component<Props> {
     render() {
+        const {numbers} = this.props.homeStore;
+
         return (<>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text>Home Screen</Text>
-                <Text>{this.props.homeStore.numbers}</Text>
+                <Text>Teste</Text>
+                <Text>{numbers}</Text>
             </View>
         </>);
     }

@@ -11,11 +11,11 @@ function Routes() {
         <NavigationContainer>
             <Stack.Navigator>
                 <Stack.Screen options={{
-                    headerTitle: 'Etanol ou Gasolina?',
-                    headerTintColor: '#ffffff',
+                    headerTitle: 'Clara Martins',
+                    headerTintColor: '#000111',
                     headerStyle: {
-                        backgroundColor: '#2b7cd7',
-                    }
+                        backgroundColor: 'pink'
+                    },
                 }} name="Home" component={Home} />
             </Stack.Navigator>
         </NavigationContainer>
