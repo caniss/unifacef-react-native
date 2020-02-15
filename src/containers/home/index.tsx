@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
 import { inject, observer } from 'mobx-react';
-
+import {ThemeProvider, Button, Text, Icon, icon} from 'react-native-elements';
 import HomeStore from '../../stores/home.store';
 
 interface Props {
@@ -11,14 +10,32 @@ interface Props {
 @inject('homeStore')
 @observer
 export default class Home extends Component<Props> {
+    
     render() {
-        const {numbers} = this.props.homeStore;
-
+        const {numbers, increment, reset, decrement} = this.props.homeStore;
         return (<>
-            <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text>Teste</Text>
+            <ThemeProvider>
+                <Text>Números</Text>
                 <Text>{numbers}</Text>
-            </View>
+                <Button icon={
+                    <Icon
+                    name="rowing"
+                    color="white"
+                    />
+                } onPress={() => increment()} title="Incrementar"></Button>
+                <Button onPress={() => decrement()} title="Decrementar"></Button>
+                <Button onPress={() => reset()} title="Resetar"></Button>
+                <Button
+  icon={
+    <Icon
+      name="arrow-right"
+      size={15}
+      color="white"
+    />
+  }
+  title="Button with icon component"
+/>
+            </ThemeProvider>
         </>);
     }
 }
